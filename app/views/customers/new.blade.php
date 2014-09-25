@@ -9,4 +9,6 @@
 		</div>
 	</div>
 	{{ Form::close() }}
+
+	<a class="btn btn-default valign_middle" href="{{ route('customers_path') }}">Back to Customers</a>
 @stop

@@ -11,17 +11,15 @@
 |
 */
 
-Route::get('/', 'HomeController@showAppInfo');
+Route::get('/appinfo', array('as' => 'appinfo_path', 'uses' => 'HomeController@showAppInfo'));
 
-Route::get('customers', 'CustomerController@index');
-
-Route::get('customers/new', 'CustomerController@newCustomer');
-
-Route::post('customers/create', array('before'=>'csrf',function(){
- //form validation come here
+Route::get('/', array('as' => 'root_path', function() {
+	return Redirect::route('customers_path');
 }));
 
-// Route::get('/', function()
-// {
-// 	return View::make('hello');
-// });
+Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'));
+
+Route::get('customers/new', array('as' => 'new_customer_path', 'uses' => 'CustomerController@newCustomer'));
+
+Route::post('customers/create',
+	array('as' => 'create_customer_path', 'before'=>'csrf', 'uses' => 'CustomerController@createCustomer'));
