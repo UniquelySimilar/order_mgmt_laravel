@@ -17,7 +17,9 @@ Route::get('/', array('as' => 'root_path', function() {
 	return Redirect::route('customers_path');
 }));
 
-Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'));
+Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@getCustomers'));
+
+Route::get('customer/{id}', array('as' => 'customer_path', 'uses' => 'CustomerController@getCustomer'));
 
 Route::get('customers/new', array('as' => 'new_customer_path', 'uses' => 'CustomerController@newCustomer'));
 

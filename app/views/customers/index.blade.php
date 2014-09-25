@@ -11,9 +11,10 @@
 			<th>CITY</th>
 			<th>STATE</th>
 			<th>ZIP CODE</th>
-			<th>HOME PHONE</th>
-			<th>WORK PHONE</th>
 			<th>EMAIL</th>
+			<th></th>
+			<th></th>
+			<th></th>
 		</tr>
 		@foreach ( $customers as $customer)
 			<tr>
@@ -22,9 +23,10 @@
 				<td><?= $customer['city'] ?></td>
 				<td><?= $customer['state'] ?></td>
 				<td><?= $customer['zipcode'] ?></td>
-				<td><?= $customer['home_phone'] ?></td>
-				<td><?= $customer['work_phone'] ?></td>
 				<td><?= $customer['email'] ?></td>
+				<td><a href="{{ route('customer_path', array($customer['id'])) }}">Show</a></td>
+				<td></td>
+				<td></td>
 			</tr>
 		@endforeach
 	</table>
