@@ -17,11 +17,15 @@ Route::get('/', array('as' => 'root_path', function() {
 	return Redirect::route('customers_path');
 }));
 
-Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@getCustomers'));
+Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'));
 
-Route::get('customer/{id}', array('as' => 'customer_path', 'uses' => 'CustomerController@getCustomer'));
+Route::get('customer/{id}', array('as' => 'show_customer_path', 'uses' => 'CustomerController@show'));
 
 Route::get('customers/new', array('as' => 'new_customer_path', 'uses' => 'CustomerController@newCustomer'));
 
 Route::post('customers/create',
-	array('as' => 'create_customer_path', 'before'=>'csrf', 'uses' => 'CustomerController@createCustomer'));
+	array('as' => 'create_customer_path', 'before'=>'csrf', 'uses' => 'CustomerController@create'));
+
+Route::get('customers/edit/{id}', array('as' => 'edit_customer_path', 'uses' => 'CustomerController@edit'));
+
+Route::put('customers/update/{id}', array('as' => 'update_customer_path', 'uses' => 'CustomerController@update'));

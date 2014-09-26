@@ -1,8 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-	<h1>Add Customer</h1>
-	{{ Form::open(array('url'=>'/customers/create', 'class' => 'form-horizontal')) }}
+	<h1>Edit Customer</h1>
+	{{ Form::model($customer,
+		array('method' => 'PUT', 'route' => array('update_customer_path', $customer->id), 'class' => 'form-horizontal')) }}
 	
 	<!-- Core page elements -->
 	@include('customers.form_core')

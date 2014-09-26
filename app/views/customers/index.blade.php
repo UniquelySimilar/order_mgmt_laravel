@@ -24,8 +24,8 @@
 				<td><?= $customer['state'] ?></td>
 				<td><?= $customer['zipcode'] ?></td>
 				<td><?= $customer['email'] ?></td>
-				<td><a href="{{ route('customer_path', array($customer['id'])) }}">Show</a></td>
-				<td></td>
+				<td><a href="{{ route('show_customer_path', array($customer['id'])) }}">Show</a></td>
+				<td><a href="{{ route('edit_customer_path', array($customer['id'])) }}">Edit</a></td>
 				<td></td>
 			</tr>
 		@endforeach
