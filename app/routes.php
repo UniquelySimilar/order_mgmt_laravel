@@ -32,6 +32,4 @@ Route::get('customers/{id}/edit', array('as' => 'edit_customer_path', 'uses' => 
 
 Route::put('customers/{id}', array('as' => 'update_customer_path', 'uses' => 'CustomerController@update'));
 
-/*
-Route::delete('customers/{id}', array('as' => 'delete_customer_path', 'uses' => 'CustomerController@destroy'));
-*/
+Route::get('customers/{id}/delete', array('as' => 'delete_customer_path', 'uses' => 'CustomerController@destroy'));

@@ -66,6 +66,8 @@ class CustomerController extends BaseController {
 	}
 
 	public function destroy($id) {
+		Customer::destroy($id);
+		
 		return Redirect::route('customers_path');
 	}
 }

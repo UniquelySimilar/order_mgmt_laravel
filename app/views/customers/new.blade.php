@@ -7,9 +7,9 @@
 	<!-- Core page elements -->
 	@include('customers.form_core')
 
-	{{ Form::submit('Save') }}
+	{{ Form::submit('Save', array('class' => 'btn btn-default')) }}
 
-	<a class="btn btn-default valign_middle" href="{{ route('customers_path') }}">Cancel</a>
+	{{ link_to_route('customers_path', 'Cancel', null, array('class' => 'btn btn-default'))}}
 
 	{{ Form::close() }}
 

@@ -2,7 +2,7 @@
 
 @section('content')
 	<h1>Customer List</h1>
-	<a class="btn btn-default valign_middle" href="{{ route('new_customer_path') }}">Add Customer</a>
+	{{ link_to_route('new_customer_path', 'Add Customer', null, array('class' => 'btn btn-default valign_middle')) }}
 
 	<table class='table'>
 		<tr>
@@ -24,9 +24,10 @@
 				<td><?= $customer['state'] ?></td>
 				<td><?= $customer['zipcode'] ?></td>
 				<td><?= $customer['email'] ?></td>
-				<td><a href="{{ route('show_customer_path', array($customer['id'])) }}">Show</a></td>
-				<td><a href="{{ route('edit_customer_path', array($customer['id'])) }}">Edit</a></td>
-				<td></td>
+				<td>{{ link_to_route('show_customer_path', 'Show', array($customer['id'])) }}</td>
+				<td>{{ link_to_route('edit_customer_path', 'Edit', array($customer['id'])) }}</td>
+				<td>{{ link_to_route('delete_customer_path',
+					'Delete', array($customer['id']), array('onclick' => 'return confirm("Delete this Customer?")')) }}</td>
 			</tr>
 		@endforeach
 	</table>

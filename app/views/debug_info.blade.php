@@ -1,7 +1,7 @@
 <br />
 <hr style="border-width: 2px;">
 
-<h4>DEBUG: REQUEST INFORMATION</h4>
+<h4>DEBUG INFORMATION</h4>
 
 <!-- Application environment -->
 <b>Environment: </b>{{$environment}}
@@ -21,7 +21,3 @@
 <?php $method = Request::method(); ?>
 <b>Method: </b>{{$method}}
 <br />
-
-<!-- Request header -->
-<?php $content_type = Request::header('Content-Type'); ?>
-<b>Content Type: </b>{{$content_type}}
