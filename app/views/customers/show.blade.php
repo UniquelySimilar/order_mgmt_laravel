@@ -10,7 +10,7 @@
 
 <div class="row">
 	<div class="col-md-6">
-		<h1>Customer</h1>
+		<h1>Customer Detail</h1>
 		<table class="table table-bordered">
 			<tr>
 				<td class="field-label col-md-2 active text-right"><label>NAME</label></td>

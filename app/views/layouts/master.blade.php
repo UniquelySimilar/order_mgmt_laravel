@@ -24,6 +24,10 @@
 	<body>
 		<div class="container">
 			@yield('content')
+			
+			@if ( ($environment = App::environment()) == "local")
+				@include('debug_info')
+			@endif
 		</div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

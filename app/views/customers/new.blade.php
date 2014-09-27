@@ -2,7 +2,7 @@
 
 @section('content')
 	<h1>Add Customer</h1>
-	{{ Form::open(array('url'=>'/customers/create', 'class' => 'form-horizontal')) }}
+	{{ Form::open(array('route' => 'create_customer_path', 'class' => 'form-horizontal')) }}
 	
 	<!-- Core page elements -->
 	@include('customers.form_core')

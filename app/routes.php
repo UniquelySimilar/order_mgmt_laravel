@@ -19,13 +19,19 @@ Route::get('/', array('as' => 'root_path', function() {
 
 Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'));
 
-Route::get('customer/{id}', array('as' => 'show_customer_path', 'uses' => 'CustomerController@show'));
-
+// IMPORTANT: Had to move 'show' path AFTER 'new' path as 'show' was interpretting URI segment 'new' and {id}
+// and routing the 'new' request to the controller 'show' method.
 Route::get('customers/new', array('as' => 'new_customer_path', 'uses' => 'CustomerController@newCustomer'));
 
-Route::post('customers/create',
+Route::get('customers/{id}', array('as' => 'show_customer_path', 'uses' => 'CustomerController@show'));
+
+Route::post('customers',
 	array('as' => 'create_customer_path', 'before'=>'csrf', 'uses' => 'CustomerController@create'));
 
-Route::get('customers/edit/{id}', array('as' => 'edit_customer_path', 'uses' => 'CustomerController@edit'));
+Route::get('customers/{id}/edit', array('as' => 'edit_customer_path', 'uses' => 'CustomerController@edit'));
 
-Route::put('customers/update/{id}', array('as' => 'update_customer_path', 'uses' => 'CustomerController@update'));
+Route::put('customers/{id}', array('as' => 'update_customer_path', 'uses' => 'CustomerController@update'));
+
+/*
+Route::delete('customers/{id}', array('as' => 'delete_customer_path', 'uses' => 'CustomerController@destroy'));
+*/

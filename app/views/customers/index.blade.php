@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	<h1>Customer list</h1>
+	<h1>Customer List</h1>
 	<a class="btn btn-default valign_middle" href="{{ route('new_customer_path') }}">Add Customer</a>
 
 	<table class='table'>
