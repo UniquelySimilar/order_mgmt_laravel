@@ -23,6 +23,8 @@
 	</head>
 	<body>
 		<div class="container">
+			@include('flash_messages')
+			
 			@yield('content')
 			
 			@if ( ($environment = App::environment()) == "local")

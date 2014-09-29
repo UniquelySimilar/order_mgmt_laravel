@@ -1,5 +1,6 @@
 <?php
 class CustomerController extends BaseController {
+
 	public function index() {
 		//Log::info("Entered 'CustomerController@index");
 
@@ -42,8 +43,6 @@ class CustomerController extends BaseController {
 
 		return Redirect::route('show_customer_path', array($customer['id']))
 								->with('success', 'Customer created.');
-//		return View::make('customers.show', array('customer' => $customer));
-//		return Redirect::route('customers_path');
 	}
 
 	public function edit($id) {

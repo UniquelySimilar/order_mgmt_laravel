@@ -2,12 +2,6 @@
 
 @section('content')
 
-@if (Session::has('success'))
-    <div class="alert alert-success" role="alert">
-        <h2>{{ Session::get('success') }}</h2>
-    </div>
-@endif
-
 <div class="row">
 	<div class="col-md-6">
 		<h1>Customer Detail</h1>
