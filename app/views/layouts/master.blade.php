@@ -23,6 +23,7 @@
 	</head>
 	<body>
 		<div class="container">
+			@include('validation_messages')
 			@include('flash_messages')
 			
 			@yield('content')

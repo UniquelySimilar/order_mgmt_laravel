@@ -1,5 +1,14 @@
 <?php
+
+use Custom\Services\Validation\CustomerFormValidator;
+
 class CustomerController extends BaseController {
+
+	protected $_validator;
+
+	public function __construct( CustomerFormValidator $validator ) {
+		$this->_validator = $validator;
+	}
 
 	public function index() {
 		//Log::info("Entered 'CustomerController@index");
@@ -25,6 +34,18 @@ class CustomerController extends BaseController {
 	}
 
 	public function create() {
+		// Validation
+		$input = Input::all();
+
+		try {
+			$validate_data = $this->_validator->validate( $input );
+
+			//return Redirect::route( 'dummy.create' )->withMessage( 'Data passed validation checks' );
+		} catch ( ValidationException $e ) {
+			return Redirect::route( 'new_customer_path' )->withInput()->withErrors( $e->get_errors() );
+		}
+
+		
 		$customer = new Customer;
 		$customer->name = Input::get('name');
 		$customer->street = Input::get('street');
