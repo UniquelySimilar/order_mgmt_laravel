@@ -11,8 +11,23 @@
 |
 */
 
+// Application information route
 Route::get('/appinfo', array('as' => 'appinfo_path', 'uses' => 'HomeController@showAppInfo'));
 
+
+// Authentication routes
+//Route::get('/', array('as' => 'home', function () { }));
+
+Route::get('login', array('as' => 'login_path', function () { }));
+
+Route::post('login', array('as' => 'authenticate_path', function () { }));
+
+Route::get('logout', array('as' => 'logout_path', function () { }));
+
+Route::get('profile', array('as' => 'profile_path', function () { }));
+
+
+// Customer routes
 Route::get('/', array('as' => 'root_path', function() {
 	return Redirect::route('customers_path');
 }));

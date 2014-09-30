@@ -8,3 +8,4 @@ composer.phar
 Thumbs.db
 
 /app/config/local/database.php
+/app/database/seeds/UserTableSeeder.php
