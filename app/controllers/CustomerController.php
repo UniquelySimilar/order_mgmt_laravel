@@ -44,22 +44,8 @@ class CustomerController extends BaseController {
 			return Redirect::route( 'new_customer_path' )->withInput()->withErrors( $e->get_errors() );
 		}
 
-		
-		$customer = new Customer;
-		$customer->name = Input::get('name');
-		$customer->street = Input::get('street');
-		$customer->city = Input::get('city');
-		$customer->state = Input::get('state');
-		$customer->zipcode = Input::get('zipcode');
-		$customer->home_phone = Input::get('home_phone');
-		$customer->work_phone = Input::get('work_phone');
-		$customer->email = Input::get('email');
-
-		if (!$customer->save()) {
-				return Redirect::back()
-								->with('error', 'Error while trying to create Customer')
-								->withInput();
-		}
+		// Creation
+		$customer = Customer::create($input);
 
 		return Redirect::route('show_customer_path', array($customer['id']))
 								->with('success', 'Customer created.');
@@ -72,9 +58,18 @@ class CustomerController extends BaseController {
 	}
 
 	public function update($id) {
+		// Validation
+		$input = Input::all();
+
+		try {
+			$validate_data = $this->_validator->validate( $input );
+		} catch ( ValidationException $e ) {
+			return Redirect::back()->withInput()->withErrors( $e->get_errors() );
+		}
+
 		$customer = Customer::find($id);
 
-		if (!$customer->update(Input::all())) {
+		if (!$customer->update($input)) {
 				return Redirect::back()
 								->with('error', 'Error while trying to update Customer')
 								->withInput();
