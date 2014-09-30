@@ -1,5 +1,6 @@
 <?php
 
+use Custom\Exceptions\ValidationException;
 use Custom\Services\Validation\CustomerFormValidator;
 
 class CustomerController extends BaseController {
@@ -39,8 +40,6 @@ class CustomerController extends BaseController {
 
 		try {
 			$validate_data = $this->_validator->validate( $input );
-
-			//return Redirect::route( 'dummy.create' )->withMessage( 'Data passed validation checks' );
 		} catch ( ValidationException $e ) {
 			return Redirect::route( 'new_customer_path' )->withInput()->withErrors( $e->get_errors() );
 		}

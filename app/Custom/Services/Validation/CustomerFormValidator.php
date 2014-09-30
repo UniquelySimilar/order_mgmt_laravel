@@ -12,7 +12,7 @@ class CustomerFormValidator extends Validator {
 		'street' => array( 'required', 'max:60' ),
 		'city' => array( 'required', 'alpha_dash', 'max:50' ),
 		'state' => array( 'required', 'alpha_dash', 'max:2' ),
-		'zipcode' => array( 'required', 'numeric', 'max:5' ),
+		'zipcode' => array( 'required', 'numeric', 'digits_between:5,9' ),
 		'home_phone' => array( 'required', 'numeric', 'digits_between:8,25' ),
 		'work_phone' => array( 'required', 'numeric', 'digits_between:8,25' ),
 		'email' => array( 'required', 'email' ),
