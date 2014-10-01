@@ -43,7 +43,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest('login')->with('warning', 'You must be logged in to view requested page.');;
 		}
 	}
 });
@@ -67,7 +67,8 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check())
+		return Redirect::route('root_path')->with('info', 'You are already logged in.');
 });
 
 /*
