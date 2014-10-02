@@ -22,14 +22,17 @@
 		</title>
 	</head>
 	<body>
+
+		@include('includes.navbar')
+
 		<div class="container">
-			@include('validation_messages')
-			@include('flash_messages')
+			@include('includes.validation_messages')
+			@include('includes.flash_messages')
 			
 			@yield('content')
 			
 			@if ( ($environment = App::environment()) == "local")
-				@include('debug_info')
+				@include('includes.debug_info')
 			@endif
 		</div>
 

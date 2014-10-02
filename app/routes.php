@@ -12,7 +12,7 @@
 */
 
 // Application information route
-Route::get('/appinfo', array('as' => 'appinfo_path', 'uses' => 'HomeController@showAppInfo'));
+//Route::get('/appinfo', array('as' => 'appinfo_path', 'uses' => 'HomeController@showAppInfo'));
 
 
 // Authentication routes
@@ -22,15 +22,13 @@ Route::get('login', array('as' => 'login_path', 'uses' => 'LoginController@login
 
 Route::post('login', array('as' => 'authenticate_path', 'uses' => 'LoginController@authenticate'));
 
-Route::get('logout', array('as' => 'logout_path', function () { }))->before('auth');
-
-//Route::get('profile', array('as' => 'profile_path', function () { }));
+Route::get('logout', array('as' => 'logout_path', 'uses' => 'LoginController@logout'))->before('auth');
 
 
 // Customer routes
 Route::get('/', array('as' => 'root_path', function() {
-	return Redirect::route('customers_path');
-}))->before('auth');
+	return Redirect::route('login_path');
+}));
 
 Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'))->before('auth');
 

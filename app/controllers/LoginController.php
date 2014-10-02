@@ -19,21 +19,29 @@ class LoginController extends BaseController {
 
 	public function authenticate() {
 		//Log::info("Entered 'LoginController@login");
-        $user = array(
-            'email' => Input::get('email'),
-            'password' => Input::get('password')
-        );
-        
-        if (Auth::attempt($user)) {
-            return Redirect::route('root_path')
-                ->with('success', 'You are successfully logged in.');
-        }
-        
-        // authentication failure! lets go back to the login page
-        return Redirect::route('login_path')
-            ->with('error', 'Your username/password combination was incorrect.')
-            ->withInput();
+		$user = array(
+			'email' => Input::get('email'),
+			'password' => Input::get('password')
+		);
+		
+		if (Auth::attempt($user)) {
+			return Redirect::route('customers_path')->with('success', 'You are successfully logged in.');
+		}
+		
+		// authentication failure! lets go back to the login page
+		return Redirect::route('login_path')
+			->with('error', 'Your username/password combination was incorrect.')
+			->withInput();
 
 		return View::make('logins.login');
 	}
+
+	public function logout() {
+		//Log::info("Entered 'LoginController@logout");
+
+		Auth::logout();
+
+		return Redirect::route('login_path');
+	}
+
 }
