@@ -27,12 +27,13 @@
 <b>Method: </b>{{ $method }}
 <br />
 
-<!-- Session information (array) -->
+<!-- Session information (array)
 <b>Session:</b>
 <br />
-<?php $data = Session::all(); ?>
+<?#php $data = Session::all(); ?>
 <ul>
-@foreach ($data as $key => $value)
-	<li><b>Key:</b> {{ $key }} - <b>Value Type:</b> {{ gettype($value) }}</li>
-@endforeach
+{{-- @foreach ($data as $key => $value) --}}
+	<li><b>Key:</b> {{-- $key --}} - <b>Value Type:</b> {{-- gettype($value) --}}</li>
+{{-- @endforeach --}}
 </ul>
+ -->
