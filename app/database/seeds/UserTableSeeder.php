@@ -3,9 +3,10 @@ class UserTableSeeder extends Seeder {
 	public function run() {
 		DB::table('users')->delete();
 
-		User::create(array(
+// Fix function call before running
+		ZZZ_User::create(array(
 			'email' => 'user1@example.com',
-			'password' => Hash::make('123qwe')
+			'password' => ZZZ_Hash::make('')
 		));
 	}
 }
