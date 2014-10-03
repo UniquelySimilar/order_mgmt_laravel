@@ -1,4 +1,7 @@
 <?php
+/*
+*/
+// Uncomment when deploying to Heroku
 
 $url = parse_url(getenv("DATABASE_URL"));
 
@@ -70,6 +73,21 @@ return array(
 			'prefix'    => '',
 		),
 
+	// Comment out when deploying to Heroku
+/*
+		'pgsql' => array(
+			'driver'   => 'pgsql',
+			'host'     => 'localhost',
+			'database' => 'forge',
+			'username' => 'forge',
+			'password' => '',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+			'schema'   => 'public',
+		),
+*/
+
+	// Uncomment when deploying to Heroku
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => $host,
@@ -80,7 +98,6 @@ return array(
 			'prefix'   => '',
 			'schema'   => 'public',
 		),
-
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',
