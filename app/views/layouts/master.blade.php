@@ -6,7 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Bootstrap -->
-		<link href="/bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+		<link href="/assets/bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+
+		<!-- App defined CSS -->
+		<link rel="stylesheet" href="/assets/css/order-mgmt.css">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +29,6 @@
 		@include('includes.navbar')
 
 		<div class="container">
-			@include('includes.validation_messages')
 			@include('includes.flash_messages')
 			
 			@yield('content')

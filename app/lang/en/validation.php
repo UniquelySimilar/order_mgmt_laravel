@@ -73,6 +73,16 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+	| Custom Validation Rules
+	|--------------------------------------------------------------------------
+	|
+	| Custom rules created in app/Custom/Validation/ValidatorRules.php
+	|
+	*/
+	"alpha_spaces_periods"     => "The :attribute may only contain letters, spaces, and periods.",
+
+	/*
+	|--------------------------------------------------------------------------
 	| Custom Validation Language Lines
 	|--------------------------------------------------------------------------
 	|
