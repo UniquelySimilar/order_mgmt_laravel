@@ -1,12 +1,12 @@
 <?php
- 
+
 namespace Custom\Services\Validation;
 
 // NOTE: If I create more form validators and rules, will probably want to move this 'require' to 'app/start/global.php'
 require app_path().'/Custom/Services/Validation/ValidationRules.php';
- 
+
 class CustomerFormValidator extends Validator {
- 
+
 	/**
 	 * @var array Validation rules for the test form, they can contain in-built Laravel rules or our custom rules
 	 */
@@ -21,4 +21,4 @@ class CustomerFormValidator extends Validator {
 		'email' => array( 'required', 'email' ),
 	);
 
-}   //end of class
+}

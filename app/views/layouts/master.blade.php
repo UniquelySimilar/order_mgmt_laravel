@@ -29,6 +29,8 @@
 		@include('includes.navbar')
 
 		<div class="container">
+			<!-- 'at' sign include('includes.validation_messages') -->
+
 			@include('includes.flash_messages')
 			
 			@yield('content')
@@ -42,6 +44,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+		<script src="/assets/bootstrap-3.2.0-dist/js/bootstrap.js"></script>
 	</body>
 </html>
