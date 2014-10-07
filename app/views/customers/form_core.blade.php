@@ -37,7 +37,7 @@
 	<div class="form-group">
 		{{ Form::label('state', 'STATE', array('class' => 'col-md-2 control-label')) }}
 		<div class="col-md-4">
-			{{ Form::text('state', null, array('class' => 'form-control')) }}
+			{{ Form::select('state', Config::get('state_list'), null, array('class' => 'form-control')); }}
 		</div>
 		@if (!empty($msg = $errors->first('state')))
 		<div class="col-md-6">
