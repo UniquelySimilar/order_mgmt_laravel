@@ -79,7 +79,8 @@ return array(
 	| Custom rules created in app/Custom/Validation/ValidatorRules.php
 	|
 	*/
-	"alpha_spaces_periods"     => "The :attribute may only contain letters, spaces, and periods.",
+	"alpha_spaces_periods"	=> "The :attribute may only contain letters, spaces, and periods.",
+	"phone_number"					=> "The :attribute may only contain numbers, parenthesis, +, -, and periods.",
 
 	/*
 	|--------------------------------------------------------------------------

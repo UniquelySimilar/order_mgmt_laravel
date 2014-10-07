@@ -16,8 +16,8 @@ class CustomerFormValidator extends Validator {
 		'city' => array( 'required', 'alpha_spaces_periods', 'max:50' ),
 		'state' => array( 'required', 'alpha', 'max:2' ),
 		'zipcode' => array( 'required', 'numeric', 'digits_between:5,9' ),
-		'home_phone' => array( 'required', 'numeric', 'digits_between:8,25' ),
-		'work_phone' => array( 'required', 'numeric', 'digits_between:8,25' ),
+		'home_phone' => array( 'phone_number', 'max:20' ),
+		'work_phone' => array( 'phone_number', 'max:20' ),
 		'email' => array( 'required', 'email' ),
 	);
 

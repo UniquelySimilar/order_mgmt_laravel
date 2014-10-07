@@ -4,7 +4,7 @@
 			{{ Form::text('name', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('name')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -16,7 +16,7 @@
 			{{ Form::text('street', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('street')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -28,7 +28,7 @@
 			{{ Form::text('city', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('city')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -40,7 +40,7 @@
 			{{ Form::text('state', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('state')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -52,7 +52,7 @@
 			{{ Form::text('zipcode', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('zipcode')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -64,7 +64,7 @@
 			{{ Form::text('home_phone', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('home_phone')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -76,7 +76,7 @@
 			{{ Form::text('work_phone', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('work_phone')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif
@@ -88,7 +88,7 @@
 			{{ Form::text('email', null, array('class' => 'form-control')) }}
 		</div>
 		@if (!empty($msg = $errors->first('email')))
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<span class="control-label validation-err" >{{ "* $msg" }}</span>
 		</div>
 		@endif

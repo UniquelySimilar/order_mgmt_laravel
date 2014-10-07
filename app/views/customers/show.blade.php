@@ -43,5 +43,9 @@
 </div>	<!-- .row -->
  
 <br>
-<a class="btn btn-default valign_middle" href="{{ route('customers_path') }}">Back to List</a>
+
+{{ link_to_route('customers_path', 'Back to List', null, array('class' => 'btn btn-default valign_middle')) }}
+{{ link_to_route('edit_customer_path', 'Edit Customer', array($customer['id']),
+	array('class' => 'btn btn-default valign_middle')) }}
+
 @stop
