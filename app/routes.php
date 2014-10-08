@@ -16,13 +16,17 @@
 
 
 // Authentication routes
-//Route::get('/', array('as' => 'home', function () { }));
-
 Route::get('login', array('as' => 'login_path', 'uses' => 'LoginController@login'))->before('guest');
 
 Route::post('login', array('as' => 'authenticate_path', 'uses' => 'LoginController@authenticate'));
 
 Route::get('logout', array('as' => 'logout_path', 'uses' => 'LoginController@logout'))->before('auth');
+
+
+// Static routes
+Route::get('about', array('as' => 'about_path', function() {
+	return View::make('static_pages.about');
+}));
 
 
 // Customer routes

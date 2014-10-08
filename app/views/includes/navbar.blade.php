@@ -29,7 +29,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						{{ link_to_route('customers_path', 'About') }}
+						{{ link_to_route('about_path', 'About') }}
 					</li>
 
 					@if (Auth::check())
