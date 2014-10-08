@@ -1,13 +1,25 @@
 <?php
-// Uncomment when deploying to Heroku
-/*
-$url = parse_url(getenv("DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
-*/
+// Initialize for default production environment.
+$host = 'localhost';
+$database = 'forge';
+$username = 'forge';
+$password = '';
+
+// If Heroku environment variable detected, reset variables.
+if (FALSE != getenv("DATABASE_URL")) {
+	Log::info("*** Heroku deployment detected.");
+	
+	$url = parse_url(getenv("DATABASE_URL"));
+	
+	$host = $url["host"];
+	$database = substr($url["path"], 1);
+	$username = $url["user"];
+	$password = $url["pass"];
+} else {
+	Log::info("*** Local deployment detected.");
+}
+
 
 return array(
 
@@ -72,20 +84,6 @@ return array(
 			'prefix'    => '',
 		),
 
-	// Comment out when deploying to Heroku
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
-
-	// Uncomment when deploying to Heroku
-/*
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => $host,
@@ -96,7 +94,7 @@ return array(
 			'prefix'   => '',
 			'schema'   => 'public',
 		),
-*/
+
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',
