@@ -32,8 +32,11 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
+			<div class="col-md-1 col-md-offset-2">
 				{{ Form::submit('Login', array('class' => 'btn btn-default')) }}
+			</div>
+			<div class="col-md-3">
+				({{ link_to_route('about_path', 'Contact developer') }} if necessary)
 			</div>
 		</div>
 	

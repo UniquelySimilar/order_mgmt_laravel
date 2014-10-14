@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<span class="navbar-brand">Order Management App</span>
+				<span class="navbar-brand">Customer Manager</span>
 			</div>
 
 			<div class="navbar-collapse collapse">

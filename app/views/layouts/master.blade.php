@@ -20,7 +20,7 @@
 
 		<title>
 			@section('title')
-				Order Management App
+				Customer Manager
 			@show
 		</title>
 	</head>

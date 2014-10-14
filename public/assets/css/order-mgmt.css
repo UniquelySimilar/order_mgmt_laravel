@@ -21,3 +21,8 @@
 .chevron-right li:before {
 	content: '\e080';
 }
+
+/* Misc */
+.col-divider {
+	border-right: 2px solid #eeeeee;
+}

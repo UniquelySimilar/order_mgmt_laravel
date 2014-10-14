@@ -31,7 +31,7 @@ Route::get('about', array('as' => 'about_path', function() {
 
 // Customer routes
 Route::get('/', array('as' => 'root_path', function() {
-	return Redirect::route('login_path');
+	return Redirect::route('about_path');
 }));
 
 Route::get('customers', array('as' => 'customers_path', 'uses' => 'CustomerController@index'))->before('auth');
